@@ -38,7 +38,7 @@ name = "delete"
 
 [[mufw.sub_commands.sub_commands]]
 name = "allow"
-include_arguments_and_subcmds = "subcmd_id_allow"       # 除了子命令的名称, cmdnode 的 arguments 和 subcmds 都用 subcmd_id_allow 即可
+include_arguments_and_subcmds = "subcmd_id_allow"
 
 [[mufw.sub_commands.sub_commands]]
 name = "deny"
