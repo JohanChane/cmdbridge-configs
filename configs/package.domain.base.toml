@@ -1,0 +1,45 @@
+# === 管理包的接口===
+
+[operations.install]
+description = "安装软件包"
+args = ["pkgs"]
+
+[operations.remove]
+description = "彻底移除软件包（包括配置和依赖）"
+args = ["pkgs"]
+
+[operations.update_pkg_db]
+description = "刷新软件包数据库"
+args = []
+
+[operations.upgrade_sys]
+description = "更新系统（刷新数据库并升级所有软件包）"
+args = []
+
+[operations.search_remote]
+description = "搜索远程仓库中的软件包"
+args = ["search_terms"]
+
+[operations.search_local]
+description = "搜索本地仓库中的软件包"
+args = ["search_terms"]
+
+[operations.info]
+description = "显示软件包详细信息"
+args = ["pkgs"]
+
+[operations.list_installed]
+description = "列出所有已安装的软件包"
+args = []
+
+[operations.list_files]
+description = "列出软件包安装的文件"
+args = ["pkgs"]
+
+[operations.find_file_owner_with_regexp]
+description = "查找文件所属的软件包"
+args = ["regexp"]
+
+[operations.download_source]
+description = "下载软件包源码"
+args = ["pkgs"]

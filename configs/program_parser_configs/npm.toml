@@ -1,0 +1,50 @@
+[npm.parser_config]
+program_name = "npm"
+
+# ## install
+[[npm.sub_commands]]
+name = "install"
+
+[[npm.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## uninstall
+[[npm.sub_commands]]
+name = "uninstall"
+
+[[npm.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## search
+[[npm.sub_commands]]
+name = "search"
+
+[[npm.sub_commands.arguments]]
+name = "search_terms"
+nargs = "+"
+
+# ## info
+[[npm.sub_commands]]
+name = "info"
+
+[[npm.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## list
+[[npm.sub_commands]]
+name = "list"
+
+[[npm.sub_commands.arguments]]
+name = "packages"
+nargs = "*"
+
+# ## pack
+[[npm.sub_commands]]
+name = "pack"
+
+[[npm.sub_commands.arguments]]
+name = "packages"
+nargs = "+"

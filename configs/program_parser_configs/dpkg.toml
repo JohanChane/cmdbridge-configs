@@ -1,0 +1,11 @@
+[dpkg.parser_config]
+program_name = "dpkg"
+
+[[dpkg.arguments]]
+name = "target"
+nargs = "*"
+
+[[dpkg.arguments]]
+name = "L"
+opt = ["-L"]
+nargs = "0"

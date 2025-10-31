@@ -1,0 +1,16 @@
+# === cargo 操作组 ===
+
+[operations.install]
+cmd_format = "cargo install {pkgs}"
+
+[operations.remove]
+cmd_format = "cargo uninstall {pkgs}"
+
+[operations.search_remote]
+cmd_format = "cargo search {search_terms}"
+
+[operations.info]
+cmd_format = "cargo info {pkgs}"
+
+[operations.list_installed]
+cmd_format = "cargo install --list"

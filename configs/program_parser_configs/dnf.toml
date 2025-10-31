@@ -1,0 +1,71 @@
+[dnf.parser_config]
+program_name = "dnf"
+
+# ## install
+[[dnf.sub_commands]]
+name = "install"
+
+[[dnf.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+[[dnf.sub_commands.arguments]]
+name = "yes"
+opt = ["-y", "--assumeyes"]
+nargs = "0"
+
+# ## remove
+[[dnf.sub_commands]]
+name = "remove"
+
+[[dnf.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## check-update
+[[dnf.sub_commands]]
+name = "check-update"
+
+# ## upgrade
+[[dnf.sub_commands]]
+name = "upgrade"
+
+# ## search
+[[dnf.sub_commands]]
+name = "search"
+
+[[dnf.sub_commands.arguments]]
+name = "search_terms"
+nargs = "+"
+
+# ## list
+[[dnf.sub_commands]]
+name = "list"
+
+[[dnf.sub_commands.sub_commands]]
+name = "installed"
+
+[[dnf.sub_commands.sub_commands.arguments]]
+name = "targets"
+nargs = "*"
+
+# ## info
+[[dnf.sub_commands]]
+name = "info"
+
+[[dnf.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## download
+[[dnf.sub_commands]]
+name = "download"
+
+[[dnf.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+[[dnf.sub_commands.arguments]]
+name = "source"
+opt = ["--source"]
+nargs = "0"

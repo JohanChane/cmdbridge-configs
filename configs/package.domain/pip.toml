@@ -1,0 +1,22 @@
+# === pip 操作组 ===
+
+[operations.install]
+cmd_format = "pip install {pkgs}"
+
+[operations.remove]
+cmd_format = "pip uninstall {pkgs}"
+
+[operations.search_remote]
+cmd_format = "pip search {search_terms}"
+
+[operations.info]
+cmd_format = "pip show {pkgs}"
+
+[operations.list_files]
+cmd_format = "pip show --files {pkgs}"
+
+[operations.list_installed]
+cmd_format = "pip list"
+
+[operations.download_source]
+cmd_format = "pip download {pkgs}"

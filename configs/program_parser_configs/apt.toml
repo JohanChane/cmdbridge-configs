@@ -1,0 +1,70 @@
+[apt.parser_config]
+program_name = "apt"
+
+# ## install
+[[apt.sub_commands]]
+name = "install"
+
+[[apt.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## remove
+[[apt.sub_commands]]
+name = "remove"
+
+[[apt.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+[[apt.sub_commands.arguments]]
+name = "purge"
+opt = ["--purge"]
+nargs = "0"
+
+# ## update
+[[apt.sub_commands]]
+name = "update"
+arguments = []
+
+# ## upgrade
+[[apt.sub_commands]]
+name = "upgrade"
+arguments = []
+
+# ## search
+[[apt.sub_commands]]
+name = "search"
+
+[[apt.sub_commands.arguments]]
+name = "search_terms"
+nargs = "+"
+
+# ## list
+[[apt.sub_commands]]
+name = "list"
+
+[[apt.sub_commands.arguments]]
+name = "targets"
+nargs = "*"
+
+[[apt.sub_commands.arguments]]
+name = "installed"
+opt = ["--installed"]
+nargs = "0"
+
+# ## show
+[[apt.sub_commands]]
+name = "show"
+
+[[apt.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## source
+[[apt.sub_commands]]
+name = "source"
+
+[[apt.sub_commands.arguments]]
+name = "packages"
+nargs = "+"

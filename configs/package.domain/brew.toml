@@ -1,0 +1,34 @@
+# === brew 操作组 ===
+
+[operations.install]
+cmd_format = "brew install {pkgs}"
+
+[operations.remove]
+cmd_format = "brew uninstall {pkgs}"
+
+[operations.update_pkg_db]
+cmd_format = "brew update"
+
+[operations.upgrade_sys]
+cmd_format = "brew upgrade"
+
+[operations.search_remote]
+cmd_format = "brew search {search_terms}"
+
+[operations.search_local]
+cmd_format = "brew list {search_terms}"
+
+[operations.info]
+cmd_format = "brew info {pkgs}"
+
+[operations.list_installed]
+cmd_format = "brew list"
+
+[operations.list_files]
+cmd_format = "brew list -v {pkgs}"
+
+[operations.find_file_owner_with_regexp]
+cmd_format = "brew list -v | grep '{regexp}'"
+
+[operations.download_source]
+cmd_format = "brew fetch {pkgs}"

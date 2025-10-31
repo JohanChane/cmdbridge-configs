@@ -1,0 +1,48 @@
+[cargo.parser_config]
+program_name = "cargo"
+
+# ## install
+[[cargo.sub_commands]]
+name = "install"
+
+[[cargo.sub_commands.arguments]]
+name = "list"
+opt = ["--list"]
+nargs = "0"
+
+[[cargo.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## uninstall
+[[cargo.sub_commands]]
+name = "uninstall"
+
+[[cargo.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## search
+[[cargo.sub_commands]]
+name = "search"
+
+[[cargo.sub_commands.arguments]]
+name = "search_terms"
+nargs = "+"
+
+# ## info
+[[cargo.sub_commands]]
+name = "info"
+
+[[cargo.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## install
+[[cargo.sub_commands]]
+name = "install"
+
+[[cargo.sub_commands.arguments]]
+name = "list"
+opt = ["--list"]
+nargs = "0"

@@ -1,0 +1,21 @@
+[rpm.parser_config]
+program_name = "rpm"
+
+[[rpm.arguments]]
+name = "targets"
+nargs = "*"
+
+[[rpm.arguments]]
+name = "q"
+opt = ["-q"]
+nargs = "0"
+
+[[rpm.arguments]]
+name = "f"
+opt = ["-f"]
+nargs = "0"
+
+[[rpm.arguments]]
+name = "l"
+opt = ["-l"]
+nargs = "0"

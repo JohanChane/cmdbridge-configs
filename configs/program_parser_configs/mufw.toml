@@ -1,0 +1,65 @@
+[mufw.parser_config]
+program_name = "mufw"
+
+# ## allow
+[[mufw.sub_commands]]
+name = "allow"
+id = "subcmd_id_allow"
+
+[[mufw.sub_commands.arguments]]
+name = "port"
+opt = ["--port"]
+nargs = "1"
+
+[[mufw.sub_commands.arguments]]
+name = "protocol"
+opt = ["--proto"]
+nargs = "1"
+
+[[mufw.sub_commands.arguments]]
+name = "service"
+opt = ["--service"]
+nargs = "1"
+
+[[mufw.sub_commands.arguments]]
+name = "from-ip"
+opt = ["--from-ip"]
+nargs = "1"
+
+# ## deny
+[[mufw.sub_commands]]
+name = "deny"
+include_arguments_and_subcmds = "subcmd_id_allow"
+id = "subcmd_id_deny"
+
+# ## delete
+[[mufw.sub_commands]]
+name = "delete"
+
+[[mufw.sub_commands.sub_commands]]
+name = "allow"
+include_arguments_and_subcmds = "subcmd_id_allow"       # 除了子命令的名称, cmdnode 的 arguments 和 subcmds 都用 subcmd_id_allow 即可
+
+[[mufw.sub_commands.sub_commands]]
+name = "deny"
+include_arguments_and_subcmds = "subcmd_id_deny"
+
+# ## status
+[[mufw.sub_commands]]
+name = "status"
+
+[[mufw.sub_commands.arguments]]
+name = "targets"
+nargs = "*"
+
+# ## enable
+[[mufw.sub_commands]]
+name = "enable"
+
+# ## disable
+[[mufw.sub_commands]]
+name = "disable"
+
+# ## reset
+[[mufw.sub_commands]]
+name = "reset"

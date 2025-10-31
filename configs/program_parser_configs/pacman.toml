@@ -1,0 +1,71 @@
+[pacman.parser_config]
+program_name = "pacman"
+
+[[pacman.arguments]]
+name = "targets"
+nargs = "+"
+
+[[pacman.arguments]]
+name = "help"
+opt = ["-h", "--help"]
+nargs = "0"
+
+[[pacman.arguments]]
+name = "S"
+opt = ["-S"]
+nargs = "0"
+
+[[pacman.arguments]]
+name = "R"
+opt = ["-R"]
+nargs = "0"
+
+[[pacman.arguments]]
+name = "Q"
+opt = ["-Q"]
+nargs = "0"
+
+[[pacman.arguments]]
+name = "F"
+opt = ["-F"]
+nargs = "0"
+
+[[pacman.arguments]]
+name = "s"
+opt = ["-s"]
+nargs = "0"
+
+[[pacman.arguments]]
+name = "n"
+opt = ["-n"]
+nargs = "0"
+
+[[pacman.arguments]]
+name = "c"
+opt = ["-c"]
+nargs = "0"
+
+[[pacman.arguments]]
+name = "x"
+opt = ["-x"]
+nargs = "0"
+
+[[pacman.arguments]]
+name = "y"
+opt = ["-y"]
+nargs = "0"
+
+[[pacman.arguments]]
+name = "u"
+opt = ["-u"]
+nargs = "0"
+
+[[pacman.arguments]]
+name = "i"
+opt = ["-i"]
+nargs = "0"
+
+[[pacman.arguments]]
+name = "l"
+opt = ["-l"]
+nargs = "0"

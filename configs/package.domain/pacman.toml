@@ -1,0 +1,34 @@
+# === pacman 操作组 ===
+
+[operations.install]
+cmd_format = "pacman -S {pkgs}"
+
+[operations.remove]
+cmd_format = "pacman -Rns {pkgs}"
+
+[operations.update_pkg_db]
+cmd_format = "pacman -Sy"
+
+[operations.upgrade_sys]
+cmd_format = "pacman -Syu"
+
+[operations.search_remote]
+cmd_format = "pacman -Ss {search_terms}"
+
+[operations.search_local]
+cmd_format = "pacman -Qs {search_terms}"
+
+[operations.info]
+cmd_format = "pacman -Si {pkgs}"
+
+[operations.list_installed]
+cmd_format = "pacman -Q"
+
+[operations.list_files]
+cmd_format = "pacman -Ql {pkgs}"
+
+[operations.find_file_owner_with_regexp]
+cmd_format = "pacman -Fx '{regexp}'"
+
+[operations.download_source]
+cmd_format = "asp export {pkgs}"

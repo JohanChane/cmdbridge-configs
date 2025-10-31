@@ -1,0 +1,22 @@
+# === npm 操作组 ===
+
+[operations.install]
+cmd_format = "npm install {pkgs}"
+
+[operations.remove]
+cmd_format = "npm uninstall {pkgs}"
+
+[operations.search_remote]
+cmd_format = "npm search {search_terms}"
+
+[operations.info]
+cmd_format = "npm info {pkgs}"
+
+[operations.list_files]
+cmd_format = "npm list {pkgs}"
+
+[operations.list_installed]
+cmd_format = "npm list"
+
+[operations.download_source]
+cmd_format = "npm pack {pkgs}"

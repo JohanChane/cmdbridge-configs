@@ -1,0 +1,55 @@
+[zypper.parser_config]
+program_name = "zypper"
+
+# ## install
+[[zypper.sub_commands]]
+name = "install"
+
+[[zypper.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## remove
+[[zypper.sub_commands]]
+name = "remove"
+
+[[zypper.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## refresh
+[[zypper.sub_commands]]
+name = "refresh"
+
+# ## update
+[[zypper.sub_commands]]
+name = "update"
+
+# ## search
+[[zypper.sub_commands]]
+name = "search"
+
+[[zypper.sub_commands.arguments]]
+name = "search_terms"
+nargs = "+"
+
+[[zypper.sub_commands.arguments]]
+name = "installed_only"
+opt = ["--installed-only"]
+nargs = "0"
+
+# info 子命令
+[[zypper.sub_commands]]
+name = "info"
+
+[[zypper.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## source-download 子命令
+[[zypper.sub_commands]]
+name = "source-download"
+
+[[zypper.sub_commands.arguments]]
+name = "packages"
+nargs = "+"

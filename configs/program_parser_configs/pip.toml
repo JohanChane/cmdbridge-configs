@@ -1,0 +1,51 @@
+[pip.parser_config]
+program_name = "pip"
+
+# ## install
+[[pip.sub_commands]]
+name = "install"
+
+[[pip.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## uninstall
+[[pip.sub_commands]]
+name = "uninstall"
+
+[[pip.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+# ## search
+[[pip.sub_commands]]
+name = "search"
+
+[[pip.sub_commands.arguments]]
+name = "search_terms"
+nargs = "+"
+
+# ## show
+[[pip.sub_commands]]
+name = "show"
+
+[[pip.sub_commands.arguments]]
+name = "packages"
+nargs = "+"
+
+[[pip.sub_commands.arguments]]
+name = "files"
+opt = ["--files"]
+nargs = "0"
+
+# ## list
+[[pip.sub_commands]]
+name = "list"
+
+# ## download
+[[pip.sub_commands]]
+name = "download"
+
+[[pip.sub_commands.arguments]]
+name = "packages"
+nargs = "+"

@@ -1,0 +1,34 @@
+# === apt 操作组 ===
+
+[operations.install]
+cmd_format = "apt install {pkgs}"
+
+[operations.remove]
+cmd_format = "apt remove {pkgs} --purge"
+
+[operations.update_pkg_db]
+cmd_format = "apt update"
+
+[operations.upgrade_sys]
+cmd_format = "apt upgrade"
+
+[operations.search_remote]
+cmd_format = "apt search {search_terms}"
+
+[operations.search_local]
+cmd_format = "apt list --installed {search_terms}"
+
+[operations.info]
+cmd_format = "apt show {pkgs}"
+
+[operations.list_installed]
+cmd_format = "apt list --installed"
+
+[operations.list_files]
+cmd_format = "dpkg -L {pkgs}"
+
+[operations.find_file_owner_with_regexp]
+cmd_format = "apt-file search '{regexp}'"
+
+[operations.download_source]
+cmd_format = "apt source {pkgs}"

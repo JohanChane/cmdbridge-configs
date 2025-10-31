@@ -1,0 +1,34 @@
+# === dnf 操作组 ===
+
+[operations.install]
+cmd_format = "dnf install {pkgs}"
+
+[operations.remove]
+cmd_format = "dnf remove {pkgs}"
+
+[operations.update_pkg_db]
+cmd_format = "dnf check-update"
+
+[operations.upgrade_sys]
+cmd_format = "dnf upgrade"
+
+[operations.search_remote]
+cmd_format = "dnf search {search_terms}"
+
+[operations.search_local]
+cmd_format = "dnf list installed {search_terms}"
+
+[operations.info]
+cmd_format = "dnf info {pkgs}"
+
+[operations.list_installed]
+cmd_format = "dnf list installed"
+
+[operations.list_files]
+cmd_format = "rpm -ql {pkgs}"
+
+[operations.find_file_owner_with_regexp]
+cmd_format = "rpm -qf '{regexp}'"
+
+[operations.download_source]
+cmd_format = "dnf download --source {pkgs}"
