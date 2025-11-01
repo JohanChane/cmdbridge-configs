@@ -1,4 +1,4 @@
-# === apt 操作组 ===
+# === apt Operation Group ===
 
 [operations.install]
 cmd_format = "apt install {pkgs}"

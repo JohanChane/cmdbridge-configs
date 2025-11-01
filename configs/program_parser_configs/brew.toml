@@ -33,7 +33,7 @@ name = "search"
 name = "search_terms"
 nargs = "+"
 
-# ## list 子命令
+# ## list
 [[brew.sub_commands]]
 name = "list"
 alias = ["ls"]
@@ -47,7 +47,7 @@ name = "verbose"
 opt = ["-v", "--verbose"]
 nargs = "0"
 
-# info 子命令
+# ## info
 [[brew.sub_commands]]
 name = "info"
 
@@ -55,7 +55,7 @@ name = "info"
 name = "packages"
 nargs = "+"
 
-# fetch 子命令（下载源码）
+# ## fetch
 [[brew.sub_commands]]
 name = "fetch"
 

@@ -1,4 +1,4 @@
-# === dnf 操作组 ===
+# === dnf Operation Group ===
 
 [operations.install]
 cmd_format = "dnf install {pkgs}"

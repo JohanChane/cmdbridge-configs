@@ -1,4 +1,4 @@
-# === zypper 操作组 ===
+# === zypper Operation Group ===
 
 [operations.install]
 cmd_format = "zypper install {pkgs}"

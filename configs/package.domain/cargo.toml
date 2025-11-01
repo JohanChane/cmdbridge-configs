@@ -1,4 +1,4 @@
-# === cargo 操作组 ===
+# === cargo Operation Group ===
 
 [operations.install]
 cmd_format = "cargo install {pkgs}"

@@ -1,4 +1,4 @@
-# === brew 操作组 ===
+# === brew Operation Group ===
 
 [operations.install]
 cmd_format = "brew install {pkgs}"

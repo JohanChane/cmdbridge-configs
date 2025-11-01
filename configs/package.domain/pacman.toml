@@ -1,4 +1,4 @@
-# === pacman 操作组 ===
+# === pacman Operation Group ===
 
 [operations.install]
 cmd_format = "pacman -S {pkgs}"

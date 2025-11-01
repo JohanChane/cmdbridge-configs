@@ -1,4 +1,4 @@
-# === pip 操作组 ===
+# === pip Operation Group ===
 
 [operations.install]
 cmd_format = "pip install {pkgs}"

@@ -1,4 +1,4 @@
-# === npm 操作组 ===
+# === npm Operation Group ===
 
 [operations.install]
 cmd_format = "npm install {pkgs}"

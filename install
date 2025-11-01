@@ -2,18 +2,18 @@
 
 set -e
 
-# 获取 XDG 配置目录
+# Get XDG config directory
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 TARGET_DIR="$XDG_CONFIG_HOME/cmdbridge"
 SOURCE_DIR="$(cd "$(dirname "$0")/configs" && pwd)"
 
-# 检查源目录是否存在
+# Check if source directory exists
 if [ ! -d "$SOURCE_DIR" ]; then
-    echo "错误: 找不到 configs 目录"
+    echo "Error: Cannot find configs directory"
     exit 1
 fi
 
-# 备份现有配置
+# Backup existing configuration
 backup_existing() {
     local counter=1
     local backup_dir
@@ -22,7 +22,7 @@ backup_existing() {
         backup_dir="${TARGET_DIR}_${counter}"
         if [ ! -d "$backup_dir" ]; then
             if [ -d "$TARGET_DIR" ]; then
-                echo "备份现有配置到: $backup_dir"
+                echo "Backing up existing configuration to: $backup_dir"
                 cp -r "$TARGET_DIR" "$backup_dir"
             fi
             break
@@ -31,17 +31,17 @@ backup_existing() {
     done
 }
 
-# 创建目标目录
+# Create target directory
 mkdir -p "$(dirname "$TARGET_DIR")"
 
-# 执行备份和安装
+# Perform backup and installation
 if [ -d "$TARGET_DIR" ]; then
     backup_existing
-    echo "删除旧配置: $TARGET_DIR"
+    echo "Removing old configuration: $TARGET_DIR"
     rm -rf "$TARGET_DIR"
 fi
 
-echo "安装新配置到: $TARGET_DIR"
+echo "Installing new configuration to: $TARGET_DIR"
 cp -r "$SOURCE_DIR" "$TARGET_DIR"
 
-echo "安装完成!"
+echo "Installation completed!"

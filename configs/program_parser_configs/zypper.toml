@@ -38,7 +38,7 @@ name = "installed_only"
 opt = ["--installed-only"]
 nargs = "0"
 
-# info 子命令
+# ## info
 [[zypper.sub_commands]]
 name = "info"
 
@@ -46,7 +46,7 @@ name = "info"
 name = "packages"
 nargs = "+"
 
-# ## source-download 子命令
+# ## source-download
 [[zypper.sub_commands]]
 name = "source-download"
 
