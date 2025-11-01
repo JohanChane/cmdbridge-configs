@@ -36,6 +36,7 @@ nargs = "+"
 # ## list 子命令
 [[brew.sub_commands]]
 name = "list"
+id = "subcmd_id_list"
 
 [[brew.sub_commands.arguments]]
 name = "packages"
@@ -45,6 +46,11 @@ nargs = "*"
 name = "verbose"
 opt = ["-v", "--verbose"]
 nargs = "0"
+
+# ## ls 子命令
+[[brew.sub_commands]]
+name = "ls"
+include_arguments_and_subcmds = "subcmd_id_list"
 
 # info 子命令
 [[brew.sub_commands]]
