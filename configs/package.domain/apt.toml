@@ -32,3 +32,7 @@ cmd_format = "apt-file search '{regexp}'"
 
 [operations.download_source]
 cmd_format = "apt source {pkgs}"
+
+[operations.list_installed_manually_with_my_format]
+cmd_format = "apt list --installed --my"
+final_cmd_format = "cb-list-installed-manually-apt"

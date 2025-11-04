@@ -32,3 +32,7 @@ cmd_format = "pacman -Fx '{regexp}'"
 
 [operations.download_source]
 cmd_format = "asp export {pkgs}"
+
+[operations.list_installed_manually_with_my_format]
+cmd_format = "pacman -Q --my"
+final_cmd_format = "cb-list-installed-manually-pacman"

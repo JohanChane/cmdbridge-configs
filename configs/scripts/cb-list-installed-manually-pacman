@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+
+import subprocess
+from datetime import datetime
+
+def list_installed_pkg_manully():
+    installed_pkgs = subprocess.check_output(['pacman', '-Qeq'], text=True).splitlines()
+    paclog_output = subprocess.check_output(['paclog', '-f', 'in'], text=True).splitlines()
+
+    installed_pkgs_set = set(installed_pkgs)
+    seen_pkgs = set()
+
+    filtered_paclog_output = []
+    for line in reversed(paclog_output):
+        parts = line.split()
+        if len(parts) < 5:
+            continue
+
+        # Extract date and time
+        date_str = parts[0]  # DD/MM/YYYY
+        time_str = parts[1]  # HH:MM
+        
+        # Convert date format
+        try:
+            # Parse original format DD/MM/YYYY HH:MM
+            datetime_obj = datetime.strptime(f"{date_str} {time_str}", '%d/%m/%Y %H:%M')
+            # Convert to YYYY-MM-DD HH:MM:SS format
+            formatted_datetime = datetime_obj.strftime('%Y-%m-%d %H:%M:%S')
+        except ValueError:
+            # If conversion fails, use original datetime
+            formatted_datetime = f"{date_str} {time_str}"
+
+        pkg = parts[3]
+        version = parts[4]
+        if pkg in installed_pkgs_set and pkg not in seen_pkgs:
+            filtered_paclog_output.append(f"{formatted_datetime}  {pkg:<30} {version}")
+            seen_pkgs.add(pkg)
+
+    for line in filtered_paclog_output:
+        print(line)
+
+if __name__ == "__main__":
+    list_installed_pkg_manully()

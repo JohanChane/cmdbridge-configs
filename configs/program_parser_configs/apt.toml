@@ -53,6 +53,11 @@ name = "installed"
 opt = ["--installed"]
 nargs = "0"
 
+[[apt.sub_commands.arguments]]
+name = "installed"
+opt = ["--my"]
+nargs = "0"
+
 # ## show
 [[apt.sub_commands]]
 name = "show"

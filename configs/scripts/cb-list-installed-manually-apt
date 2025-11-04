@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+
+import subprocess
+import glob
+import re
+from datetime import datetime
+
+def list_manually_installed_clean():
+    # Get manually installed packages
+    manual_pkgs = subprocess.check_output(
+        ['apt-mark', 'showmanual'], text=True
+    ).splitlines()
+    manual_pkgs_set = set([pkg.strip() for pkg in manual_pkgs if pkg.strip()])
+    
+    # Get version information for all installed packages
+    installed_versions = {}
+    try:
+        dpkg_output = subprocess.check_output(
+            ['dpkg-query', '-W', '-f=${Package} ${Version}\n'], text=True
+        ).splitlines()
+        for line in dpkg_output:
+            if line.strip():
+                parts = line.split(' ', 1)
+                if len(parts) == 2:
+                    installed_versions[parts[0]] = parts[1]
+    except subprocess.CalledProcessError:
+        pass
+    
+    seen_pkgs = set()
+    package_data = []
+    
+    # Analyze log files
+    log_files = ['/var/log/dpkg.log'] + sorted(glob.glob('/var/log/dpkg.log.*.gz'), reverse=True)
+    
+    for log_file in log_files:
+        try:
+            if log_file.endswith('.gz'):
+                lines = subprocess.check_output(['zcat', log_file], text=True, stderr=subprocess.DEVNULL).splitlines()
+            else:
+                with open(log_file, 'r') as f:
+                    lines = f.readlines()
+            
+            for line in reversed(lines):
+                parts = line.strip().split()
+                if len(parts) >= 4 and parts[2] == 'install':
+                    pkg_with_arch = parts[3]
+                    pkg = pkg_with_arch.split(':')[0]
+                    
+                    if pkg in manual_pkgs_set and pkg not in seen_pkgs:
+                        date_str = f"{parts[0]} {parts[1]}"
+                        try:
+                            date_obj = datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S')
+                        except ValueError:
+                            date_obj = datetime.min
+                            
+                        package_data.append({
+                            'date': date_obj,
+                            'date_str': date_str,
+                            'pkg': pkg,
+                            'version': installed_versions.get(pkg, "unknown")
+                        })
+                        seen_pkgs.add(pkg)
+                        
+        except (FileNotFoundError, subprocess.CalledProcessError):
+            continue
+    
+    # Sort by date in descending order and output
+    package_data.sort(key=lambda x: x['date'], reverse=True)
+    
+    for item in package_data:
+        print(f"{item['date_str']}  {item['pkg']:<30} {item['version']}")
+
+if __name__ == "__main__":
+    list_manually_installed_clean()

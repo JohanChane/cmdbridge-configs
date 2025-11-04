@@ -69,3 +69,8 @@ nargs = "0"
 name = "l"
 opt = ["-l"]
 nargs = "0"
+
+[[pacman.arguments]]
+name = "my"
+opt = ["--my"]
+nargs = "0"
